@@ -1,0 +1,126 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    /* Base Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Container */
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    /* Card */
+    .card {
+        background: #ffffff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        width: 350px;
+    }
+
+        .card h2 {
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+    /* Short URL */
+    .short-url {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+        .short-url a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .short-url button {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+            .short-url button:hover {
+                background: #45a049;
+            }
+
+    /* Info */
+    .info {
+        color: #777;
+        margin-bottom: 15px;
+    }
+
+    /* Home Button */
+    .btn-home {
+        background: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+        .btn-home:hover {
+            background: #0056b3;
+        }
+
+</style>
+
+<div class="container">
+    <div class="card">
+        <h2>URL Başarıyla Kısaltıldı!</h2>
+        <div class="short-url">
+            <a id="shortLink" href="@ViewBag.FullUrl" target="_blank">https://linkify.mkg/@ViewBag.ShortUrl</a>
+            <button onclick="copyToClipboard()">Kopyala</button>
+        </div>
+        <p class="info">Kısaltılmış linki şimdi kolayca paylaşabilirsiniz.</p>
+        <button class="btn-home" onclick="goHome()">Ana Sayfaya Dön</button>
+    </div>
+</div>
+
+<script>
+    function copyToClipboard() {
+        var link = document.getElementById("shortLink").href;
+        navigator.clipboard.writeText(link).then(function () {
+            alert("Kısaltılmış URL kopyalandı: " + link);
+        }, function (err) {
+            console.error("Metin kopyalanamadı: ", err);
+        });
+    }
+
+    function goHome() {
+        window.location.href = "index.html"; // Bu kısmı ana sayfa URL'inize göre değiştirin
+    }
+</script>

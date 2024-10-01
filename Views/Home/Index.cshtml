@@ -1,0 +1,135 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    /* Genel Stil Ayarları */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    body {
+        background: #f0f0f0;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Ana Konteyner */
+    .container {
+        width: 80%;
+        max-width: 900px;
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    /* Başlık ve Açıklama */
+    header {
+        margin-bottom: 30px;
+    }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #007BFF;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+    /* Kısaltma Alanı */
+    .shorten-section {
+        margin-bottom: 30px;
+    }
+
+        .shorten-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .shorten-section form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shorten-section input {
+            padding: 10px;
+            width: 60%;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-right: 10px;
+            transition: border 0.3s;
+        }
+
+            .shorten-section input:focus {
+                border-color: #007BFF;
+                outline: none;
+            }
+
+        .shorten-section button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+            .shorten-section button:hover {
+                background-color: #218838;
+            }
+
+    /* Bilgilendirme Bölümü */
+    .info-section {
+        text-align: left;
+    }
+
+        .info-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        .info-section p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+</style>
+
+<div class="container">
+    <header>
+        <h1>URL Kısaltıcı</h1>
+        <p>Uzun URL'lerinizi hızlıca kısaltın ve paylaşın!</p>
+    </header>
+
+    <section class="shorten-section">
+        <h2>Link Kısalt</h2>
+        <form action="/url/Linkify" method="post" autocomplete="off">
+            <input type="url" name="OriginalUrl" id="urlInput" placeholder="Kısaltmak istediğiniz URL'yi buraya yapıştırın" required>
+            <button type="submit">Kısalt</button>
+        </form>
+    </section>
+
+    <section class="info-section">
+        <h3>Nasıl Çalışır?</h3>
+        <p>Uzun ve karmaşık linklerinizi kısaltarak, paylaşım yapmayı çok daha kolay hale getiriyoruz. Kısaltılmış URL'leriniz, daha kısa, hatırlanabilir ve kullanıcı dostudur.</p>
+        <p>Kısalttığınız linkler güvenlidir ve verileriniz gizli tutulur. Kısa sürede, URL'lerinizi yönetebilir ve analiz edebilirsiniz.</p>
+    </section>
+
+</div>
